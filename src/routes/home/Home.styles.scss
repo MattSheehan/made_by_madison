@@ -1,0 +1,18 @@
+.home {
+  text-align: center;
+  height: auto;
+  width: auto;
+  background-color: #f3f3f3;
+  padding: 5px;
+
+  .home-container {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    border: 2px solid #ebebeb;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fbfbfb;
+  }
+}
