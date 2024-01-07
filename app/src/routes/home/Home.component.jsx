@@ -1,5 +1,5 @@
 import './Home.styles.scss';
-import home_DATA from '../../db/data/home_DATA.js'
+import home_DATA from '../../data/home_DATA'
 import CategoryList from '../../components/shop/CategoryList/CategoryList.component';
 
 const Home = () => {

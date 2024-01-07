@@ -1,7 +1,7 @@
 import './Shop.styles.scss';
-import shop_DATA from '../../db/data/shop_DATA.js';
-import designStudio_DATA from '../../db/data/designer_DATA.js';
-import about_DATA from '../../db/data/about_DATA.js';
+import shop_DATA from '../../data/shop_DATA.js';
+import designStudio_DATA from '../../data/designer_DATA.js';
+import about_DATA from '../../data/about_DATA.js';
 import CategoryList from '../../components/shop/CategoryList/CategoryList.component';
 
 const Shop = () => {
