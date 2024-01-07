@@ -39,6 +39,17 @@ const Category = ({category}) => {
         </div>
       );
       break;
+    case "home": 
+      theCategory = (
+        <div className='category-container'>
+        <div className='background-image' style={imageStyle}/>
+          <div className='category-body-container'>
+            <h2>{title}</h2>
+            <div><p>{subtitle}</p></div>
+          </div>
+        </div>
+      );
+      break;
     default: 
       console.log('category.app passed to prop is unrecognized or null: ', app);
       break;

@@ -1,17 +1,14 @@
-import React from 'react';
-//import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
-// track history of user's navigation (routes) 
-import { BrowserRouter } from 'react-router-dom';
-
+// library imports
+import React from 'react';  // !== framework
+import { createRoot } from 'react-dom/client';  // replaced 'ReactDOM' in v.18 React Upgrade
+import { BrowserRouter } from 'react-router-dom';  // track history of user's navigation (routes) 
+// local imports
 import './index.scss';
-import App from './views/App';
+import App from './App';
 import reportWebVitals from './utils/performance/reportWebVitals';
-
-
-const container = document.getElementById('root')
-const root = createRoot(container)
-
+// store html 'root' element as entry point for our app
+const root = createRoot(document.getElementById('root'));
+// instantiate 'root' element with our rendered app
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -19,8 +16,5 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Performance measuring of app logged to console. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(console.log); 
