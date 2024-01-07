@@ -3,19 +3,17 @@ import { Outlet, Link } from 'react-router-dom';
 import './Navigation.styles.scss';
 import ReactLogo from '../../utils/images/crown.svg';
 
-const Navigation = ({components}) => {
+const Navigation = () => {
   return (
     <Fragment>
       <div className='container'>
         <div className='navigation'>
           <div>
-            <Link className='logo-container' to='/'>
-              <img className='background-image' src={ReactLogo} alt="navigation-img"/>
-            </Link>
+            <Link className='logo-container' to='/'><img className='logo' src={ReactLogo} alt="navigation-img"/></Link>
           </div>
           <div className='nav-links-container' >
-            <Link className='nav-link' to='/shop'>Shop</Link>
-            <Link className='nav-link' to='/shop'>Login</Link>
+            <Link className='nav-link' to='/shop'>SHOP</Link>
+            <Link className='nav-link' to='/'>LOGIN</Link>
           </div>
         </div>
         <Outlet />

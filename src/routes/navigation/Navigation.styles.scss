@@ -1,6 +1,5 @@
 .container {
   align-items: center;
-  justify-content: center;
   border: 2px solid #ebebeb;
   border-radius: 10px;
   padding: 10px;
@@ -13,18 +12,20 @@
     justify-content: space-between;
 
     .logo-container {
-      height: 100%;
+      height: auto;
       width: auto;
       display: flex;
-      padding-left: 10px;
-      padding-bottom: 20px;
+      padding: 10px 15px;
       align-items: center;
       justify-content: center;
 
       &:hover {
         cursor: pointer;
+        border: 2px solid #fbfbfb;
+        border-radius: 10px;
+        background-color: #fbfbfb;
     
-        & .background-image {
+        & .logo {
           transform: scale(1.5);
           transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
         }
