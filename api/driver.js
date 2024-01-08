@@ -2,13 +2,13 @@
  *  Driver exports:
  *    1.  initDriver({uri, user, password})
  *    2.  getDriver()
- *    3.  setDriver()
- *    4.  closeDriver()
+ *    3.  closeDriver()
+ *    4.  seedDB()
 */
 import neo4j from 'neo4j-driver'
 import { users } from './src/data/users';
 const DATABASE = process.env.NEO4J_DBMS
-// Launch Aura DB
+
 export async function initDriver({NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD}) {
   // Create Driver
   let driver
@@ -35,34 +35,45 @@ export const getDriver = () => {
   });
 };
 
-export async function setDriver() {
+export async function closeDriver() {
   let driver
   try { 
     driver = getDriver()
-    const serverInfo = await driver.getServerInfo()
-    console.log('Connection estabilished')
-    console.log(serverInfo)
+    console.log('Closing Connection...')
   } catch(err) {
-    console.log(`Connection error\n${err}\nCause: ${err.cause}`)
+    console.log(`ERROR\n${err}\nCause: ${err.cause}`)
     await driver.close()
     return
   }
-  // Create some nodes
+  await driver.close()
+  console.log("Connection Closed")
+}
+
+export async function seedDB() {
+  let driver
+  try { 
+    driver = getDriver()
+  } catch(err) {
+    console.log(`ERROR\n${err}\nCause: ${err.cause}`)
+    closeDriver()
+  }
+  // CREATE nodes
   for(let user of users) {
-    // CREATE
     await driver.executeQuery(
       'MERGE (u:User {name: $user.username, joined: $user.joinDate})',
       { user: user },
       { database: DATABASE }
     )
-    // VERIFY
+  }
+  // VERIFY nodes
+  for(let user of users) {
     await driver.executeQuery(
       'MATCH (u:User {username: $user.username}) RETURN u.username, u.joinDate, u.friends',
       { user: user },
       { database: DATABASE }
     )
   }
-  // Create some relationships
+  // CREATE relationships
   for(let user of users) {
     if(user.friends !== undefined) {
       await driver.executeQuery(`
@@ -75,19 +86,5 @@ export async function setDriver() {
         { database: DATABASE }
       )
     }
-  }
-}
-
-export async function closeDriver() {
-  let driver
-  try { 
-    driver = getDriver()
-    await driver.close()
-    console.log('Connection Closed')
-    return
-  } catch(err) {
-    console.log(`Connection error\n${err}\nCause: ${err.cause}`)
-    await driver.close()
-    return
   }
 }
