@@ -1,22 +1,19 @@
-var neo4j = require('neo4j-driver');
-import { users } from './src/data/users';
-/*
+/*  DISCLAIMER: I literally do not know what I'm doing... yet!
  *  Driver exports:
  *    1.  initDriver({uri, user, password})
  *    2.  getDriver()
  *    3.  setDriver()
  *    4.  closeDriver()
 */
+import neo4j from 'neo4j-driver'
+import { users } from './src/data/users';
+const DATABASE = process.env.NEO4J_DBMS
 // Launch Aura DB
-export async function initDriver({uri, user, password}) {
-  // Import environment configs
-  const URI = process.env.NEO4J_URI
-  const USER = process.env.NEO4J_USERNAME
-  const PASSWORD = process.env.NEO4J_PASSWORD
+export async function initDriver({NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD}) {
   // Create Driver
   let driver
   try {
-    driver = neo4j.driver(URI, neo4j.auth.basic(USER, PASSWORD))
+    driver = neo4j.driver(NEO4J_URI, neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWORD))
     const serverInfo = await driver.getServerInfo()
     console.log('Connection estabilished')
     console.log(serverInfo)
@@ -27,16 +24,16 @@ export async function initDriver({uri, user, password}) {
   }
   await driver.verifyConnectivity()
   return driver
-  //await driver.close()
 };
 
 export const getDriver = () => {
-  // Import environment configs
-  const URI = process.env.NEO4J_URI
-  const USER = process.env.NEO4J_USERNAME
-  const PASSWORD = process.env.NEO4J_PASSWORD
-  return initDriver({uri:URI, user:USER, password:PASSWORD})
-} 
+  // Pass environment configs as params
+  return initDriver({
+    NEO4J_URI: process.env.NEO4J_URI, 
+    NEO4J_USER: process.env.NEO4J_USER, 
+    NEO4J_PASSWORD: process.env.NEO4J_PASSWORD
+  });
+};
 
 export async function setDriver() {
   let driver
@@ -56,13 +53,13 @@ export async function setDriver() {
     await driver.executeQuery(
       'MERGE (u:User {name: $user.username, joined: $user.joinDate})',
       { user: user },
-      { database: 'neo4j' }
+      { database: DATABASE }
     )
     // VERIFY
     await driver.executeQuery(
       'MATCH (u:User {username: $user.username}) RETURN u.username, u.joinDate, u.friends',
       { user: user },
-      { database: 'neo4j' }
+      { database: DATABASE }
     )
   }
   // Create some relationships
@@ -75,7 +72,7 @@ export async function setDriver() {
         MERGE (u)-[:KNOWS]->(friend)
         `, 
         { user: user },
-        { database: 'neo4j' }
+        { database: DATABASE }
       )
     }
   }
