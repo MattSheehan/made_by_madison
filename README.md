@@ -12,6 +12,8 @@ Eventually this project will incorporate a Mobile & DBMS app.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+**HUGE S/O** to the devs over at [GRANDStack](https://github.com/grand-stack), you guys are awesome!
+
 ## Available Scripts
 
 npm start in ./api and then ./app
