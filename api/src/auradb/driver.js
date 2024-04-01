@@ -5,9 +5,9 @@
  *    3.  closeDriver()
  *    4.  seedDB()
 */
-import neo4j from 'neo4j-driver'
+import neo4j from 'neo4j-driver';
 import { users } from './src/data/users';
-const DATABASE = process.env.NEO4J_DBMS
+const DATABASE = process.env.NEO4J_DBMS;
 
 export async function initDriver({NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD}) {
   // Create Driver
@@ -47,7 +47,7 @@ export async function closeDriver() {
   }
   await driver.close()
   console.log("Connection Closed")
-}
+};
 
 export async function seedDB() {
   let driver
@@ -87,4 +87,4 @@ export async function seedDB() {
       )
     }
   }
-}
+};

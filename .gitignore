@@ -10,8 +10,11 @@
 /api/src/data/*.js
 
 # production
-/app/build
 /api/build
+/api/src/auradb/Neo4j-*-*.txt
+/api/.env
+/app/build
+/app/package-lock.json
 
 # misc
 .DS_Store
@@ -23,8 +26,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-/api/Neo4j-*-*.txt
-/api/.env
-
-/app/package-lock.json
