@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 npm start in ./api and then ./app
 
-## TODO: Docker this bitch
+## TODO: Docker & Deploy
 
 1.  Describe the two containers ['**neo4j**', '**react**']
 2.  docker img build
