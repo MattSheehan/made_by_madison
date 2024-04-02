@@ -12,10 +12,10 @@
 # production
 /api/build
 /api/src/auradb/Neo4j-*-*.txt
+/api/src/auradb/users.js
 /api/.env
 /app/build
 /app/package-lock.json
-/api/src/auradb/users.js
 
 # misc
 .DS_Store
