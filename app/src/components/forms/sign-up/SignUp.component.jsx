@@ -4,9 +4,8 @@ import AuthButton from '../../buttons/AuthButton.component';
 import { createUserBasicAuth, createUserAuthDoc } from '../../../utils/firebase/firebase.utils';
 import './SignUp.styles.scss';
 
-const defaultFormFields = { displayName: '', email: '', password: '', confirmPassword: '' };
 const SignUp = () => {
-  const [ formFields, setFormFields ] = useState(defaultFormFields);
+  const [ formFields, setFormFields ] = useState({ displayName:'', email:'', password:'', confirmPassword:'' });
   const { displayName, email, password, confirmPassword } = formFields;
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -14,14 +13,11 @@ const SignUp = () => {
     try {
       const { user } = await createUserBasicAuth( email, password );
       await createUserAuthDoc(user, { displayName });
-      setFormFields(defaultFormFields);
-    } catch (error) {
-      if (error.code === 'auth/email-already-in-use') {
-        alert('Cannot create user, email already in use');
-      } else {
-        console.log('user creation encountered an error', error);
-      }
-    }
+      setFormFields({ displayName:'', email:'', password:'', confirmPassword:'' });
+    } catch (error) { switch (error.code) {
+      case 'auth/email-already-in-use': {<div>{alert('Cannot create user, email already in use')}</div>; break; }
+      default: { console.log('user creation encountered an error', error); break; }
+    }}
   };
   const handleChange = (event) => {
     const { name, value } = event.target;

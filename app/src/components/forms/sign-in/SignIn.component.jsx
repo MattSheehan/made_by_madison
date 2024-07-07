@@ -14,13 +14,11 @@ const SignIn = () => {
       const response = await signInUserBasicAuth( email, password );
       console.log(response);
       setFormFields({ email: '', password: '' });
-    } catch (error) {
-      switch (error.code) {
-        case 'auth/wrong-password': alert('incorrect password for email'); break;
-        case 'auth/user-not-found': alert('no user associated with this email'); break;
-        default: console.log(error);
-      }
-    }
+    } catch (error) { switch (error.code) {
+      case 'auth/wrong-password': {<div>{alert('incorrect password for email')}</div>; break;}
+      case 'auth/user-not-found': {<div>{alert('no user associated with this email')}</div>; break;}
+      default: {console.log(error);}
+    }}
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
