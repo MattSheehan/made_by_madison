@@ -1,3 +1,5 @@
+# Because of @GitHub, I've lost `E V E R Y T H I N G` on the private repository that I wasn't going to push, because it's private, but when I switched to **_main_**, that was it... everything lost and no version control to manage it... **_Here's to starting again_**
+
 # Getting Started with Create React App
 
 This project is a starter for building a GRANDstack (GraphQL, React, Apollo, Neo4j Database) application. There are two components to the project:
