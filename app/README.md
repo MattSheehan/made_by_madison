@@ -23,18 +23,17 @@ npm start ;
 ### Create new branch
 
 ```PowerShell
-[Hashtable]$_git = @{ msg="Added main app components, nav bar, google auth, updated some webdev dependencies cause why not, wanted to see what'd break"; todo="finish auth component, finish stripes api, finish knowledge graphs (offline, on-paper)" };
-git checkout <#_YOUR_BRANCH_NAME_#>;
-git add .;
-git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)";
-git push;
+[Hashtable]$_git = @{ msg="Added main app components, nav bar, google auth, updated some webdev dependencies cause why not, wanted to see what'd break"; todo="finish auth component, finish stripes api, finish knowledge graphs (offline, on-paper)" } ;
+git add . ;
+git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)" ;
+git push ;
 ```
 
 ### Push code to new branch
 
 ```PowerShell
-[Hashtable]$_git = @{ msg="Added main app components, nav bar, google auth, updated some webdev dependencies cause why not, wanted to see what'd break"; todo="finish auth component, finish stripes api, finish knowledge graphs (offline, on-paper)" };
-git add .;
-git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)";
-git push;
+[Hashtable]$_git = @{ msg="Added main app components, nav bar, google auth, updated some webdev dependencies cause why not, wanted to see what'd break"; todo="finish auth component, finish stripes api, finish knowledge graphs (offline, on-paper)" } ;
+git add . ;
+git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)" ;
+git push ;
 ```
