@@ -58,11 +58,20 @@
     max-width: 300px;
     min-width: 200px;
 
+    &:hover {
+      transform: scale(1.14159);
+      transition: transform 3.14159s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      & .logo {
+        cursor: pointer;
+      }
+    }
+
     h2 {
       font-weight: bold;
       margin: 0 6px 0;
       font-size: 22px;
       color: #4a4a4a;
+      text-align: center;
     }
 
     p {

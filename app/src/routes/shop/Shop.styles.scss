@@ -6,4 +6,15 @@
   font-size: calc(10px + 2vmin);
   justify-content: center;
   padding: 10px;
+  // Child of --> List container
+  .categories-title-container {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    // Child of --> Title Container
+    .categories-title {
+      font-variant: small-caps;
+    }
+  }
 }

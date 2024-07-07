@@ -4,7 +4,7 @@
   border: 2px solid #eeeaf0;
   border-radius: 0px;
   padding: 20px;
-  overflow-y: scroll;
+  height: 100%;
 
   .navigation {
     align-items: center;
@@ -15,8 +15,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    max-width: 100px;
-    min-width: 75px;
+    max-width: 75px;
 
     .logo-container {
       display: block;
@@ -25,11 +24,9 @@
       padding: 20px;
 
       &:hover {
-        background-color: #e0f6e9;
-        border: 2px solid #36f894;
-        border-radius: 10px;
+        width: auto;
         transform: scale(1.5);
-        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        transition: transform 0.314159s cubic-bezier(0.25, 0.45, 0.45, 0.95);
         & .logo {
           cursor: pointer;
         }

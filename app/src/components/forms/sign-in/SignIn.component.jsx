@@ -7,13 +7,13 @@ import {
   signInWithGoogleRedirect,
 } from '../../../utils/firebase/firebase.utils';
 import './SignIn.styles.scss';
-const defaultFormFields = { email: '', password: '' };
+
 const SignIn = () => {
-  const [ formFields, setFormFields ] = useState(defaultFormFields);
+  const [ formFields, setFormFields ] = useState({ email: '', password: '' });
   const { email, password } = formFields;
 
   const resetFormFields = () => {
-    setFormFields(defaultFormFields);
+    setFormFields({ email: '', password: '' });
   };
 
   const signInWithGoogle = async () => {

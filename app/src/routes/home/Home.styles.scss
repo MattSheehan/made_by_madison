@@ -1,9 +1,19 @@
 .home-container {
   align-items: center;
-  background-color: #ffffff0f;
-  border: 2px solid #ffffff0f;
-  border-radius: 10px;
   font-size: calc(10px + 2vmin);
   justify-content: center;
-  padding: 10px;
+  height: 100%;
+  margin: 1px;
+  padding: 1px;
+  // Child of --> List container
+  .categories-title-container {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    // Child of --> Title Container
+    .categories-title {
+      font-variant: small-caps;
+    }
+  }
 }
