@@ -1,14 +1,28 @@
 .container {
   background-color: #f0eff2;;
   display: grid;
-  grid-template-columns: 10% auto;
+  grid-template-columns: 8% auto;
+  height: 100vw;
   padding: 0px;
-
-  .tabContent {
-    background-color: #ffffff;
-    border: 2px solid #e6e4e8;
-    border-radius: 10px;
-    height: 100%;
-    margin: 10px;
+  .content-container {
+    
+    .logo-container {
+      align-items: end;
+      display: flex;
+      flex-direction: row;
+      font-size: calc(14px + 1vmin);
+      justify-self: center;
+      padding: 10px;
+      .logo {
+        &:hover { cursor: pointer; }
+      }
+    }
+    .tabContent {
+      background-color: #ffffff;
+      border: 2px solid #e6e4e8;
+      border-radius: 10px;
+      height: 100%;
+      margin: 10px;
+    }
   }
 }

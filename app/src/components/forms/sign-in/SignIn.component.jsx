@@ -15,6 +15,7 @@ const SignIn = () => {
       console.log(response);
       setFormFields({ email: '', password: '' });
     } catch (error) { switch (error.code) {
+      case 'auth/operation-not-allowed': {<div>{alert('firebase error')}</div>; break;}
       case 'auth/wrong-password': {<div>{alert('incorrect password for email')}</div>; break;}
       case 'auth/user-not-found': {<div>{alert('no user associated with this email')}</div>; break;}
       default: {console.log(error);}

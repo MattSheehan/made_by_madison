@@ -15,21 +15,21 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
+    margin-left: -8px;
+    margin-top: -8px;
     max-width: 75px;
 
     .logo-container {
       display: block;
       font-size: calc(14px + 1vmin);
       justify-self: center;
-      padding: 20px;
+      padding: 10px;
 
       &:hover {
         width: auto;
-        transform: scale(1.5);
+        transform: scale(1.4159);
         transition: transform 0.314159s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-        & .logo {
-          cursor: pointer;
-        }
+        .logo { cursor: pointer; }
       }
     }
 

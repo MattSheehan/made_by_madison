@@ -21,5 +21,4 @@ const Authentication = () => {
     </div>
   );
 };
-
 export default Authentication;
