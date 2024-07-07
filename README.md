@@ -18,6 +18,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 npm start in ./api and then ./app
 
+#### MacOS:
+
+#### PowerShell Upgrade
+
+- Open Terminal and run `brew upgrade powershell --cask;` to upgrade your current powershell version.
+- Run `pwsh;` **AFTER** recieving a message similar to...
+
+```Shell
+  installer: Package name is PowerShell - {{MajorVersion}}.{{MinorVersion}}.{{LatestVersion}}
+  installer: Installing at base path /
+  installer: The install was successful.
+```
+
+- In the PowerShell CLI, run `$PSVersionTable;`. Take note of your version.
+- Verify installed PSVersion is latest as seen here: ("[https://github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases)").
+
 ## TODO: Docker & Deploy
 
 1.  Describe the two containers ['**neo4j**', '**react**']

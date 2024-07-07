@@ -6,7 +6,6 @@
   font-size: calc(10px + 2vmin);
   justify-content: center;
   margin: 10px;
-  min-height: 100vh;
   padding: 10px;
 
   // Child of --> List container
@@ -19,7 +18,6 @@
 
     // Child of --> Title Container
     .categories-title {
-      color: #61fbda;
       font-variant: small-caps;
     }
   }

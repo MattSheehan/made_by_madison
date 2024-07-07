@@ -1,12 +1,6 @@
-/*  DISCLAIMER: I literally do not know what I'm doing... yet!
- *  Driver exports:
- *    1.  initDriver({uri, user, password})
- *    2.  getDriver()
- *    3.  closeDriver()
- *    4.  seedDB()
-*/
 import neo4j from 'neo4j-driver';
 import { users } from './src/data/users';
+
 const DATABASE = process.env.NEO4J_DBMS;
 
 export async function initDriver({NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD}) {

@@ -1,0 +1,18 @@
+.auth {
+  display: flex;
+  width: 900px;
+  justify-content: space-between;
+  margin: 30px auto;
+
+  .auth-container {
+    display: block;
+    background-color: #fbfbfb;
+    border: 2px solid #efefef;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .auth-container-spacer {
+    padding-top: 40px;
+  }
+}

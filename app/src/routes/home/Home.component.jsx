@@ -1,12 +1,45 @@
 import './Home.styles.scss';
-import home_DATA from '../../data/home_DATA'
-import CategoryList from '../../components/shop/CategoryList/CategoryList.component';
+import CategoryList from '../../components/cards/CategoryList/CategoryList.component';
+import '../../components/cards/CategoryList/CategoryList.component';
 
 const Home = () => {
-  const appName = "Home"
+  const appName = "Home";
+  const appData = [
+    {
+      id: (1000001),
+      name: ('shop'),
+      title: ('Shop'),
+      subtitle: ('Start shopping!'),
+      imageUrl: ("https://i.ibb.co/cvpntL1/hats.png"),
+      app: ('home')
+    },
+    {
+      id: (1000002),
+      name: ('designer'),
+      title: ('Designer'),
+      subtitle: ('Virtually Design your next room!'),
+      imageUrl: ("https://i.ibb.co/px2tCc3/jackets.png"),
+      app: ('home')
+    },
+    {
+      id: (1000003),
+      name: ('about'),
+      title: ('About'),
+      subtitle: <span>
+        - Contact Info<br/>
+        - Documentation<br/>
+        - FAQs & Blogs<br/>
+      </span>,
+      imageUrl: ("https://i.ibb.co/GCCdy8t/womens.png"),
+      app: ('home')
+    }
+  ];
   return (
-    <div className='home'>
-      <CategoryList appName={appName} categories={home_DATA} />
+    <div className='home-container'>
+      <div className='categories-title-container'>
+          <h1 className='categories-title'>{appName}</h1>
+      </div>
+      <CategoryList categories={appData} />
     </div>
   );
 };

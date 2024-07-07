@@ -1,19 +1,38 @@
 import { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './Navigation.styles.scss';
-import ReactLogo from '../../utils/images/crown.svg';
+import { MdAccountCircle, MdInfo, MdMuseum, MdPalette, MdSettings, MdStore } from "react-icons/md";
 
 const Navigation = () => {
+  const dirs = [
+    { path:('/'), content:(<div><h2><MdMuseum /></h2></div>) },
+    { path:'/shop', content:<div><h2><MdStore/></h2></div> },
+    { path:'/designer', content:<div><h2><MdPalette/></h2></div>  },
+    { path:'/about', content:<div><h2><MdInfo/></h2></div>  },
+    { path:'/auth', content:<div><h2><MdAccountCircle/></h2></div> },
+    { path:'/settings', content:<div><h2><MdSettings/></h2></div> }
+  ];
   return (
     <Fragment>
       <div className='container'>
         <div className='navigation'>
-          <div>
-            <Link className='logo-container' to='/'><img className='logo' src={ReactLogo} alt="navigation-img"/></Link>
+          <div className='logo-container'>
+            <Link className='nav-link' to={dirs[4].path}>{dirs[4].content}</Link>
           </div>
-          <div className='nav-links-container' >
-            <Link className='nav-link' to='/shop'>SHOP</Link>
-            <Link className='nav-link' to='/'>LOGIN</Link>
+          <div className='logo-container'>
+            <Link className='logo' to={dirs[0].path}>{dirs[0].content}</Link>
+          </div>
+          <div className='logo-container'>
+            <Link className='logo' to={dirs[1].path}>{dirs[1].content}</Link>
+          </div>
+          <div className='logo-container'>
+            <Link className='nav-link' to={dirs[2].path}>{dirs[2].content}</Link>
+          </div>
+          <div className='logo-container'>
+            <Link className='nav-link' to={dirs[3].path}>{dirs[3].content}</Link>
+          </div>
+          <div className='logo-container' >
+            <Link className='nav-link' to={dirs[4].path}>{dirs[5].content}</Link>
           </div>
         </div>
         <Outlet />

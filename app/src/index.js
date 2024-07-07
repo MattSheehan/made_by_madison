@@ -1,7 +1,7 @@
 // library imports
 import React from 'react';  // !== framework
 import { createRoot } from 'react-dom/client';  // replaced 'ReactDOM' in v.18 React Upgrade
-import { BrowserRouter } from 'react-router-dom';  // track history of user's navigation (routes) 
+import { BrowserRouter } from 'react-router-dom';  // record user's navigation (routes)
 // local imports
 import './index.scss';
 import App from './App';
