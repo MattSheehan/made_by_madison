@@ -37,3 +37,14 @@ git add . ;
 git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)" ;
 git push ;
 ```
+
+### Fix: 'Unable to create ./git/HEAD.lock'
+
+```PowerShell
+<# Option 1 #>
+@('COMMIT_EDITMSG','index.lock','.HEAD.lock') | ForEach-Object { rm -f ./git/$_ };
+<# Option 1 #>
+rm .git/COMMIT_EDITMSG
+rm -f .git/index.lock
+rm -f .git/HEAD.lock
+```
