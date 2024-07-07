@@ -1,8 +1,7 @@
-# Getting Started with Create React App
+# Getting Started / Available Scripts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br>
+One can view the available `react-scripts` cmnds there, below are _'custom'_
 
 ## Install & Run
 
@@ -18,22 +17,25 @@ if ("$(Get-Location)" -NOTLIKE "*/made_by_madison/app") {
 
 ## Push code to repo
 
-### Create new branch
+### Create new branch / Switch to new branch
 
 ```PowerShell
-[Hashtable]$_git = @{ msg="Added main app components, nav bar, google auth, updated some webdev dependencies cause why not, wanted to see what'd break"; todo="finish auth component, finish stripes api, finish knowledge graphs (offline, on-paper)" } ;
-git add . ;
-git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)" ;
-git push ;
+git branch $_YOUR_BRANCH_NAME_ ;
+git checkout $_YOUR_BRANCH_NAME_ ;
+git add .; git commit -m "init new branch" ;
+git status ;
+git push -u origin $_YOUR_BRANCH_NAME ;
+git status ;
 ```
 
-### Push code to new branch
+### Push code to branch / push to Dev,Stage,Prod,Test,etc. branch
 
 ```PowerShell
-[Hashtable]$_git = @{ msg="Added main app components, nav bar, google auth, updated some webdev dependencies cause why not, wanted to see what'd break"; todo="finish auth component, finish stripes api, finish knowledge graphs (offline, on-paper)" } ;
-git add . ;
-git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)" ;
-git push ;
+[Hashtable]$_git = @{ msg=("main components, nav bar, google auth, and styling."); todo=("finish stripes api, knowledge graphs (offline, on-paper)")} ;
+git add . ; git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)" ; git push ;
+git checkout $_YOUR_BRANCH_NAME_ ;
+git pull origin $_ACTIVE_BRANCH_NAME_ ;
+git add . ; git commit -m "COMPLETED: $($_git.msg) | TODO: $($_git.todo)" ; git push ;
 ```
 
 ### Fix: 'Unable to create ./git/HEAD.lock'
