@@ -1,51 +1,31 @@
 import { useState } from 'react';
 import FormInput from '../form-input/FormInput.component';
 import AuthButton from '../../buttons/AuthButton.component';
-import {
-  createUserAuthDoc,
-  signInUserBasicAuth,
-  signInWithGoogleRedirect,
-} from '../../../utils/firebase/firebase.utils';
+import { createUserAuthDoc, signInUserBasicAuth, signInWithGoogleRedirect } from '../../../utils/firebase/firebase.utils';
 import './SignIn.styles.scss';
 
 const SignIn = () => {
   const [ formFields, setFormFields ] = useState({ email: '', password: '' });
   const { email, password } = formFields;
-
-  const resetFormFields = () => {
-    setFormFields({ email: '', password: '' });
-  };
-
-  const signInWithGoogle = async () => {
-    const { user } = await signInWithGoogleRedirect();
-    await createUserAuthDoc(user);
-  };
-
+  const signInWithGoogle = async () => { await createUserAuthDoc(signInWithGoogleRedirect()); };
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await signInUserBasicAuth( email, password );
       console.log(response);
-      resetFormFields();
+      setFormFields({ email: '', password: '' });
     } catch (error) {
       switch (error.code) {
-        case 'auth/wrong-password':
-          alert('incorrect password for email');
-          break;
-        case 'auth/user-not-found':
-          alert('no user associated with this email');
-          break;
-        default:
-          console.log(error);
+        case 'auth/wrong-password': alert('incorrect password for email'); break;
+        case 'auth/user-not-found': alert('no user associated with this email'); break;
+        default: console.log(error);
       }
     }
   };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [ name ]: value });
   };
-
   return (
     <div className='sign-in-container'>
       <h2>Already have an account?</h2>

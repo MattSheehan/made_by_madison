@@ -9,13 +9,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ```PowerShell
-if ("$(Get-Location)" -NOTLIKE "*/made_by_madison/app") { Set-Location ./app };
-@('./node_modules','./package-lock.json') | ForEach-Object { Remove-Item ($_) -Recurse -Force -ErrorAction SilentlyContinue } ;
-npm install ;
-Write-Output("`ninstalled ./app/package.json dependencies, stand-by 30 seconds") ;
-Start-Sleep(30) ;
-Write-Output("running 'react-scripts start'") ;
-npm start ;
+if ("$(Get-Location)" -NOTLIKE "*/made_by_madison/app") {
+    Set-Location ./app
+} ; @('./node_modules','./package-lock.json') | ForEach-Object {
+    Remove-Item ($_) -Recurse -Force -ErrorAction SilentlyContinue
+} ; npm install ; Start-Sleep -Seconds 10 ; npm start ;
 ```
 
 ## Push code to repo
