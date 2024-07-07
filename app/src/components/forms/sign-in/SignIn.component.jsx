@@ -55,6 +55,7 @@ const SignIn = () => {
           label='Email'
           type='email'
           required={true}
+          autoComplete='on'
           onChange={handleChange}
           name='email'
           value={email}
@@ -63,6 +64,7 @@ const SignIn = () => {
           label='Password'
           type='password'
           required={true}
+          autoComplete='on'
           onChange={handleChange}
           name='password'
           value={password}

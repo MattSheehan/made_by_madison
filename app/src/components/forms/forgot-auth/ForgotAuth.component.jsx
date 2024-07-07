@@ -37,6 +37,7 @@ const ForgotAuth = () => {
           label='Email'
           type='email'
           required={true}
+          autoComplete='on'
           onChange={handleChange}
           name='email'
           value={email}
