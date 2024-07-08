@@ -1,12 +1,26 @@
-.logo-container {
-  align-items: flex-end;
+.container {
+  align-items: center;
   display: flex;
-  flex-direction: row;
-  font-size: calc(14px + 1vmin);
-  justify-self: center;
-  .logo {
-    align-items: flex-end;
-    padding: 10px;
-    &:hover { cursor: pointer; }
+  flex-direction: column;
+  .search-container {
+    width: 1000px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    .search-form-container {
+      border: 2px solid #e6e4e8;
+      border-radius: 10px;
+      padding: 0px 10px;
+    }
+  }
+  .logo-container {
+    font-size: calc(14px + 1vmin);
+    justify-self: center;
+    .logo {
+      align-items: flex-end;
+      padding: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
