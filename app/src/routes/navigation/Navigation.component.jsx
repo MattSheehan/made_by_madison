@@ -1,24 +1,19 @@
 import { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './Navigation.styles.scss';
-import { MdAccountCircle, MdInfo, MdMuseum, MdPalette, MdSettings, MdStore } from "react-icons/md";
+import { MdInfo, MdMuseum, MdPalette, MdStore } from "react-icons/md";
 
 const Navigation = () => {
   const dirs = [
     { path:('/'), content:(<div><h2><MdMuseum /></h2></div>) },
     { path:'/shop', content:<div><h2><MdStore/></h2></div> },
     { path:'/designer', content:<div><h2><MdPalette/></h2></div>  },
-    { path:'/about', content:<div><h2><MdInfo/></h2></div>  },
-    { path:'/auth', content:<div><h2><MdAccountCircle/></h2></div> },
-    { path:'/settings', content:<div><h2><MdSettings/></h2></div> }
+    { path:'/about', content:<div><h2><MdInfo/></h2></div>  }
   ];
   return (
     <Fragment>
       <div className='container'>
         <div className='navigation'>
-          <div className='logo-container'>
-            <Link className='nav-link' to={dirs[4].path}>{dirs[4].content}</Link>
-          </div>
           <div className='logo-container'>
             <Link className='logo' to={dirs[0].path}>{dirs[0].content}</Link>
           </div>
@@ -26,13 +21,10 @@ const Navigation = () => {
             <Link className='logo' to={dirs[1].path}>{dirs[1].content}</Link>
           </div>
           <div className='logo-container'>
-            <Link className='nav-link' to={dirs[2].path}>{dirs[2].content}</Link>
+            <Link className='logo' to={dirs[2].path}>{dirs[2].content}</Link>
           </div>
           <div className='logo-container'>
-            <Link className='nav-link' to={dirs[3].path}>{dirs[3].content}</Link>
-          </div>
-          <div className='logo-container' >
-            <Link className='nav-link' to={dirs[4].path}>{dirs[5].content}</Link>
+            <Link className='logo' to={dirs[3].path}>{dirs[3].content}</Link>
           </div>
         </div>
         <Outlet />

@@ -1,0 +1,12 @@
+.logo-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  font-size: calc(14px + 1vmin);
+  justify-self: center;
+  .logo {
+    align-items: flex-end;
+    padding: 10px;
+    &:hover { cursor: pointer; }
+  }
+}

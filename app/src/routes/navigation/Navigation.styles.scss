@@ -5,7 +5,6 @@
   border-radius: 0px;
   padding: 20px;
   height: 100%;
-
   .navigation {
     align-items: center;
     background-color: #ffffff;
@@ -18,13 +17,11 @@
     margin-left: -8px;
     margin-top: -8px;
     max-width: 75px;
-
     .logo-container {
       display: block;
       font-size: calc(14px + 1vmin);
       justify-self: center;
       padding: 10px;
-
       &:hover {
         width: auto;
         transform: scale(1.4159);
@@ -32,7 +29,6 @@
         .logo { cursor: pointer; }
       }
     }
-
     .nav-links-container {
       display: block;
       font-size: calc(14px + 1vmin);
@@ -40,14 +36,11 @@
       justify-content: flex-end;
       padding: 10px 15px;
       width: auto;
-
       .nav-link {
-        cursor: pointer;
         background-color: #fbfbfb;
         border: 2px solid #dbdbdb00;
         border-radius: 10px;
         padding: 10px 15px;
-
         &:hover {
           cursor: pointer;
           background-color: #efefef6f;

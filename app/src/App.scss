@@ -1,22 +1,13 @@
 .container {
-  background-color: #f0eff2;;
+  background-color: #f0eff2;
   display: grid;
-  grid-template-columns: 8% auto;
-  height: 100vw;
+  grid-template-columns: 5vw 95vw;
+  height: 100vh;
   padding: 0px;
   .content-container {
-    
-    .logo-container {
-      align-items: end;
-      display: flex;
-      flex-direction: row;
-      font-size: calc(14px + 1vmin);
-      justify-self: center;
-      padding: 10px;
-      .logo {
-        &:hover { cursor: pointer; }
-      }
-    }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     .tabContent {
       background-color: #ffffff;
       border: 2px solid #e6e4e8;
